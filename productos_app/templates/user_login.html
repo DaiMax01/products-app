@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            background-image: url('https://example.com/your-background-image.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero {
+            height: 100%;
+            background-color: #1B1833; 
+        }
+
+        .hero-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            color: #1B1833; 
+            font-weight: 700;
+        }
+
+        .box {
+            background-color: #ffffff;
+            padding: 60px; 
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+            width: 100%;
+            margin: auto; 
+            box-sizing: border-box; 
+        }
+
+        .button.is-primary {
+            background-color: #34c759; /* Green color for the button */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        .button.is-primary:hover {
+            background-color: #28a745; /* Darker green on hover */
+        }
+
+        .input:focus {
+            border-color: #34c759; /* Green focus border color */
+            box-shadow: 0 0 5px rgba(52, 199, 89, 0.5); /* Focus shadow */
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            color: #555; /* Subtle color for footer text */
+        }
+
+        .notification.is-danger {
+            margin-top: 20px; /* Add margin to the error notification */
+            background-color: #ffcccb; /* Light red background for error */
+            color: #d8000c; /* Dark red text for error */
+        }
+
+        /* Estilo para la línea divisoria */
+        .divider {
+            border-top: 1px solid #ddd; /* Light gray color */
+            margin: 30px 0; /* Spacing around the divider */
+        }
+    </style>
+</head>
+<body>
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="columns is-vcentered is-centered">
+                <!-- Columna para el logo -->
+                <div class="column is-12-mobile is-6-tablet is-4-desktop is-5-widescreen is-8-fullhd">
+                    <img class="logo" src="https://konverza.digital/images/logo-konverza.png" alt="logo_empresa">
+                </div>
+                
+                <!-- Columna para el formulario -->
+                <div class="column is-12-mobile is-6-tablet is-4-desktop is-5-widescreen is-10-fullhd">
+                    <div class="box">
+                        <h1 class="title is-1 custom-title is-center has-text-centered pb-5">Iniciar sesión</h1>
+                        <form method="post">
+                            {% csrf_token %}
+                            
+                            <!-- Campo de Nombre de Usuario -->
+                            <div class="field">
+                                <label class="label">Nombre de usuario: </label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="text" name="username" placeholder="Nombre de usuario" required>
+                                    <span class="icon is-left">
+                                        <i class="fa-solid fa-user"></i> 
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <!-- Campo de Contraseña -->
+                            <div class="field mb-6">
+                                <label class="label">Contraseña: </label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="password" name="password" placeholder="Contraseña" required>
+                                    <span class="icon is-left">
+                                        <i class="fa-solid fa-lock"></i> 
+                                    </span>
+                                </div>
+                            </div>
+            
+                            <!-- Botón de Iniciar sesión -->
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button is-primary is-fullwidth" type="submit">Iniciar sesión</button>
+                                </div>
+                            </div>
+            
+                            <!-- Mensaje de error si hay alguno -->
+                            {% if form.errors %}
+                                <div class="notification is-danger">
+                                    <strong>Error:</strong> Nombre de usuario o contraseña incorrectos.
+                                </div>
+                            {% endif %}
+                        </form>
+            
+                        <!-- Mensaje de registro -->
+                        <div class="has-text-centered">
+                            <p class="footer-text">¿No tienes cuenta? <a href="">Regístrate aquí</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+</body>
+<script src="https://kit.fontawesome.com/988fb26608.js" crossorigin="anonymous"></script>
+</html>

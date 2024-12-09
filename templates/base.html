@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Aplicación{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
+    
+</head>
+<body>
+    <div class="content">
+        <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="">
+                        Productos
+                    </a>
+                    <a class="navbar-item" href="">
+                        Movimientos
+                    </a>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <i class="fa-solid fa-user-check"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="section">
+            <div class="container">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="content">
+            <p>
+                <strong>MiApp</strong> por <a href="#">TuNombre</a>. Construido con Bulma.
+            </p>
+        </div>
+    </footer>
+    <script src="{% static 'js/base_script.js' %}"></script>
+    <script src="https://kit.fontawesome.com/988fb26608.js" crossorigin="anonymous"></script>
+</body>
+</html>
