@@ -28,7 +28,7 @@ Este proyecto es una aplicación web para gestionar productos e inventario. Fue 
 
 ## ⚙️ Configuración del Proyecto
 
-## Metodo 1: Sin Docker
+## Metodo 1: Sin Docker y PostgreSQL
 
 ### 1️⃣ Clonar el Repositorio
 ```bash
@@ -51,6 +51,8 @@ HOST= ""
 PORT= ""
 ```
 Las variables hacen referencia a los datos de conexion de la base de datos
+
+Opcionalmente se puede crear una base de datos y ejecutar el archivo script.sql para migrar los datos a la base de datos
 ### 4️⃣ Migrar la Base de Datos
 ```bash
 python manage.py migrate
