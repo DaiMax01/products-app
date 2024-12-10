@@ -33,12 +33,10 @@ $("#productoForm").submit(function (e) {
         }, 
         data: formData,
         success: function (response) {
-            console.log("Solicitud exitosa:", response);
             $("#productosTable").DataTable().ajax.reload();
             $("#modal-catalogos").removeClass("is-active");
         },
         error: function (error) {
-            console.log("Error en la solicitud:", error);
         }
     });
 });
