@@ -45,7 +45,6 @@ $(document).on("click", ".modal-close, .modal-background", function() {
 });
 
 $(document).on("click", ".delete-producto", function() {
-    console.log($(this).data("url"))
     $.ajax({
         type: "DELETE",
         headers: {
@@ -72,7 +71,6 @@ $("#productoForm").submit(function (e) {
         }, 
         data: formData,
         success: function (response) {
-            console.log("Solicitud exitosa:", response);
             $("#productosTable").DataTable().ajax.reload();
             $("#modal-catalogos").removeClass("is-active");
         },
@@ -120,7 +118,6 @@ $('#productosTable').on('click', '.edit-producto', function() {
             modal.classList.add('is-active');
         },
         error: function(error) {
-            console.log("Error al cargar los datos del producto:", error);
         }
     });
 });
@@ -147,14 +144,12 @@ $('#edit-producto-form').submit(function(e) {
         },
         data: formData,
         success: function(response) {
-            console.log("Producto actualizado con éxito", response);
             const modal = document.getElementById('modal-edit-producto');
             modal.classList.remove('is-active');
             $('#productosTable').DataTable().ajax.reload();
         },
         error: function (xhr) {
             if (xhr.responseJSON) {
-                console.log(xhr.responseJSON)
                 $.each(xhr.responseJSON, function(field, messages) {
                     const inputField = $("#id_" + field);
         
