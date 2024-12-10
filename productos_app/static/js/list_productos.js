@@ -76,8 +76,21 @@ $("#productoForm").submit(function (e) {
             $("#productosTable").DataTable().ajax.reload();
             $("#modal-catalogos").removeClass("is-active");
         },
-        error: function (error) {
-            console.log("Error en la solicitud:", error);
+        error: function (xhr) {
+            if (xhr.responseJSON) {
+                $.each(xhr.responseJSON, function(field, messages) {
+                    const inputField = $("#id_" + field);
+        
+                    if (inputField.length > 0) {
+                        inputField.addClass("is-danger");
+                        const errorMessage = messages.join(", ");
+                        inputField.siblings(".help").remove();
+                        inputField.parent().append('<p class="help is-danger">' + errorMessage + '</p>');
+                    }
+                });
+            } else {
+                alert("Ocurrió un error en el servidor. Inténtalo nuevamente.");
+            }
         }
     });
 });
@@ -139,8 +152,22 @@ $('#edit-producto-form').submit(function(e) {
             modal.classList.remove('is-active');
             $('#productosTable').DataTable().ajax.reload();
         },
-        error: function(error) {
-            console.log("Error al actualizar el producto:", error);
+        error: function (xhr) {
+            if (xhr.responseJSON) {
+                console.log(xhr.responseJSON)
+                $.each(xhr.responseJSON, function(field, messages) {
+                    const inputField = $("#id_" + field);
+        
+                    if (inputField.length > 0) {
+                        inputField.addClass("is-danger");
+                        const errorMessage = messages.join(", ");
+                        inputField.siblings(".help").remove();
+                        inputField.parent().append('<p class="help is-danger">' + errorMessage + '</p>');
+                    }
+                });
+            } else {
+                alert("Ocurrió un error en el servidor. Inténtalo nuevamente.");
+            }
         }
     });
 });

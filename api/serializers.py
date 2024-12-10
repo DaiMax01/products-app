@@ -7,6 +7,18 @@ class ProductoSerializer(serializers.ModelSerializer):
         model = Producto
         fields = '__all__'
 
+    def validate_cantidad(self, value):
+        if value <= 0:
+            raise serializers.ValidationError("La cantidad no puede ser negativa ni 0.")
+        return value
+    def validate_costo_unitario(self, value):
+        if value <= 0:
+            raise serializers.ValidationError("El costo unitario no puede ser negativo ni 0.")
+        return value
+    def validate_precio_venta(self, value):
+        if value <= 0:
+            raise serializers.ValidationError("El precio de venta no puede ser negativo ni 0. ")
+        return value
 class MovimientoSerializer(serializers.ModelSerializer):
     tipo = serializers.ChoiceField(choices=tipo_movimiento)
     producto = serializers.PrimaryKeyRelatedField(queryset=StockProductos.objects.all())

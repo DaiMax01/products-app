@@ -8,7 +8,7 @@
 {%include 'modals/add_producto_modal.html'%}
 {%include 'modals/edit_producto_modal.html'%}
 <div class="container">
-    <h1 class="title is-2 has-text-centered">Catalogo de Productos</h1>
+    <h1 class="title is-2 has-text-centered"><i class="fa-solid fa-book"></i>Catalogo de Productos</h1>
     <table class="table" id="productosTable" data-url="{% url 'api:producto_data' %}" data-csrf="{{csrf_token}}" class="table is-striped  is-fullwidth">
         <thead>
             <tr>

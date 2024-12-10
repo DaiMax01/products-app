@@ -7,7 +7,7 @@
 {%include 'scripts.html'%}
 {%include 'modals/add_movimiento_modal.html'%}
 <div class="container">
-    <h1 class="title is-2 has-text-centered">Lista de Productos</h1>
+    <h1 class="title is-2 has-text-centered"><i class="fa-solid fa-warehouse"></i> Inventario</h1>
     <table id="productosTable" data-url="{% url 'api:producto_data' %}" data-csrf="{{csrf_token}}" class="table is-striped  is-fullwidth">
         <thead>
             <tr>

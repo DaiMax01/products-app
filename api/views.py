@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView, CreateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -32,6 +32,11 @@ class ProductoListCreateView(ListCreateAPIView):
 class ProductoDataView(BaseDatatableView):
     model = StockProductos
     columns = ['id', 'nombre_producto', 'precio_unitario', 'cantidad_disponible', 'valor_total']
+    order_columns = ['id',
+                 'producto__descripcion',
+                 'producto__costo_unitario',
+                 'cantidad_disponible',
+                 'valor_total']
     def post(self, request, *args, **kwargs):
 
         return super().get(request, *args, **kwargs)
@@ -71,6 +76,10 @@ class ProductoDataView(BaseDatatableView):
 class CatalogoProductoDataView(BaseDatatableView):
     model = Producto
     columns = ['id', 'descripcion', 'costo_unitario', 'precio_venta']
+    order_columns = ['id',
+             'descripcion',
+             'costo_unitario',
+             'precio_venta']
     def dispatch(self, request, *args, **kwargs):
         jwt_auth = JWTAuthentication()
         try:
@@ -110,6 +119,11 @@ class CatalogoProductoDataView(BaseDatatableView):
 class MovimientosDataView(BaseDatatableView):
     model = Movimimientos
     columns = ['id','fecha_formateada', 'nombre_producto', 'tipo', 'cantidad']
+    order_columns = ['id',
+         'fecha__date',
+         'producto__producto__descripcion',
+         'tipo',
+         'cantidad']
     def dispatch(self, request, *args, **kwargs):
         jwt_auth = JWTAuthentication()
         try:

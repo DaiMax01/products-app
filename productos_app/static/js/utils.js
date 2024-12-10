@@ -20,6 +20,12 @@ export function initializeDataTable(selector, ajaxUrl, columns,buttons,dom,token
             data: function (d) {
                
             },
+            error: function(xhr) {
+                if (xhr.status === 401) {
+                    
+                    window.location.href = "/login"; 
+                }
+            }
         },
         dom:dom,
         columns: columns,
