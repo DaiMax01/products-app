@@ -32,7 +32,6 @@ $("#user_form").submit(function (e) {
             });
         },
         error: function (error) {
-            console.log(error);
 
             Swal.close();
             Swal.fire({
@@ -46,8 +45,6 @@ $("#user_form").submit(function (e) {
             })
         },
         complete: function () {
-
-            console.log(response)
         },
     });
 });

@@ -33,9 +33,7 @@ class MovimientoSerializer(serializers.ModelSerializer):
         producto = validated_data['producto']
         movimiento = Movimimientos.objects.create(**validated_data)
         stock_producto = producto
-        print("ADIOS")
         if tipo_movimiento == 1: 
-            print("HOLA")
             stock_producto.cantidad_disponible += cantidad
         elif tipo_movimiento == 2: 
             stock_producto.cantidad_disponible -= cantidad
