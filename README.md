@@ -19,7 +19,7 @@ Este proyecto es una aplicación web para gestionar productos e inventario. Fue 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
-
+- **Version de Python**: 3.12.4
 - **Backend**: Django 5.x, Django REST Framework.
 - **Base de Datos**: PostgreSQL 16.
 - **Frontend**: Formularios y plantillas gestionadas con Django.
