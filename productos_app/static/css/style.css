@@ -1,0 +1,63 @@
+body, html {
+    height: 100%;
+    background-image: url('https://example.com/your-background-image.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero {
+    height: 100%;
+    background-color: #1B1833; 
+}
+
+.hero-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: #1B1833; 
+    font-weight: 700;
+}
+
+.box {
+    background-color: #ffffff;
+    padding: 60px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    width: 100%;
+    margin: auto; 
+    box-sizing: border-box; 
+}
+
+.button.is-primary {
+    background-color: #34c759; /* Green color for the button */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.button.is-primary:hover {
+    background-color: #28a745; /* Darker green on hover */
+}
+
+.input:focus {
+    border-color: #34c759; /* Green focus border color */
+    box-shadow: 0 0 5px rgba(52, 199, 89, 0.5); /* Focus shadow */
+}
+
+.footer-text {
+    margin-top: 20px;
+    color: #555; /* Subtle color for footer text */
+}
+
+.notification.is-danger {
+    margin-top: 20px; /* Add margin to the error notification */
+    background-color: #ffcccb; /* Light red background for error */
+    color: #d8000c; /* Dark red text for error */
+}
+
+/* Estilo para la línea divisoria */
+.divider {
+    border-top: 1px solid #ddd; /* Light gray color */
+    margin: 30px 0; /* Spacing around the divider */
+}

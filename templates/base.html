@@ -7,13 +7,14 @@
     <title>{% block title %}Mi Aplicación{% endblock %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
-    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
 </head>
 <body>
     <div class="content">
         <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item" href="">
+                <a class="navbar-item" href="/">
                     <i class="fa-solid fa-house"></i>
                 </a>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
@@ -25,10 +26,13 @@
 
             <div id="navbarMenu" class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="">
+                    <a class="navbar-item" href="{% url 'productos:catalogo_view' %}">
                         Productos
                     </a>
-                    <a class="navbar-item" href="">
+                    <a class="navbar-item" href="{% url 'productos:index_view' %}">
+                        Inventario
+                    </a>
+                    <a class="navbar-item" href="{% url 'productos:movimientos_view' %}">
                         Movimientos
                     </a>
                 </div>
@@ -36,7 +40,10 @@
                 <div class="navbar-end">
                     <div class="navbar-item">
                         <div class="buttons">
-                            <i class="fa-solid fa-right-from-bracket"></i>
+                    
+                            <button type="button" id="logoutBtn" class="button">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </button>
                             <i class="fa-solid fa-user-check"></i>
                         </div>
                     </div>
@@ -53,11 +60,15 @@
     <footer class="footer">
         <div class="content">
             <p>
-                <strong>MiApp</strong> por <a href="#">TuNombre</a>. Construido con Bulma.
+                <strong>Inventario App</strong> por <a href="https://konverza.digital/">Konverza Digital Solutions</a>.
             </p>
         </div>
     </footer>
-    <script src="{% static 'js/base_script.js' %}"></script>
+   
+    
     <script src="https://kit.fontawesome.com/988fb26608.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{% static 'js/base_script.js' %}"></script>
 </body>
 </html>

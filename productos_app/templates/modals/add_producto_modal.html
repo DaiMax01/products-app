@@ -1,0 +1,14 @@
+{% load crispy_forms_tags %}
+<div id="modal-catalogos" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="box">
+            <h1 class="title">Agregar Producto</h1>
+            <form id="productoForm" data-url="{% url 'api:producto' %}">
+                {{form|crispy}}
+                <button class="button is-success">Crear Producto</button>
+            </form>
+        </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+</div>

@@ -11,3 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+$("#logoutBtn").click(function (e) { 
+    e.preventDefault();
+    $.ajax({
+        type: "GET",
+        url: "api/logout",
+        success: function (response) {
+            window.location.href = "login"
+        }
+    });
+});
