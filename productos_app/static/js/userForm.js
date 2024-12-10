@@ -10,7 +10,7 @@ $("#user_form").submit(function (e) {
         allowEnterKey: false,
         showConfirmButton: false,
         didOpen: () => {
-            Swal.showLoading(); // Muestra un spinner de carga.
+            Swal.showLoading();
         }
     });
     $.ajax({

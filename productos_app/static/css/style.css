@@ -32,32 +32,32 @@ body, html {
 }
 
 .button.is-primary {
-    background-color: #34c759; /* Green color for the button */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    background-color: #34c759;
+    transition: background-color 0.3s ease;
 }
 
 .button.is-primary:hover {
-    background-color: #28a745; /* Darker green on hover */
+    background-color: #28a745;
 }
 
 .input:focus {
-    border-color: #34c759; /* Green focus border color */
-    box-shadow: 0 0 5px rgba(52, 199, 89, 0.5); /* Focus shadow */
+    border-color: #34c759;
+    box-shadow: 0 0 5px rgba(52, 199, 89, 0.5); 
 }
 
 .footer-text {
     margin-top: 20px;
-    color: #555; /* Subtle color for footer text */
+    color: #555; 
 }
 
 .notification.is-danger {
-    margin-top: 20px; /* Add margin to the error notification */
-    background-color: #ffcccb; /* Light red background for error */
-    color: #d8000c; /* Dark red text for error */
+    margin-top: 20px; 
+    background-color: #ffcccb; 
+    color: #d8000c; 
 }
 
-/* Estilo para la línea divisoria */
+
 .divider {
-    border-top: 1px solid #ddd; /* Light gray color */
-    margin: 30px 0; /* Spacing around the divider */
+    border-top: 1px solid #ddd; 
+    margin: 30px 0; 
 }

@@ -1,0 +1,10 @@
+services:
+  konverza-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: konverza-app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env

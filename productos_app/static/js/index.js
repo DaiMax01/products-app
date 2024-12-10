@@ -3,7 +3,7 @@ const token = sessionStorage.getItem("access_token");
 
 initializeDataTable(
     "#productosTable",
-    "/api/producto-data/", // URL del endpoint para esta tabla
+    "/api/producto-data/", 
     [
         { data: "id" },
         { data: "nombre_producto" },

@@ -3,7 +3,7 @@ const token = sessionStorage.getItem("access_token");
 
 initializeDataTable(
     "#productosTable",
-    "/api/movimiento-data/", // URL del endpoint para esta tabla
+    "/api/movimiento-data/",
     [
         { data: "id" },
         { data: "fecha_formateada" },
