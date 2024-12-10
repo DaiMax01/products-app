@@ -175,7 +175,7 @@ def logout(request):
     return JsonResponse({"message": "Sesión cerrada exitosamente"}, status=200)
 
 
-class MovimientoCreateView(CreateAPIView):
+class MovimientoCreateView(ListCreateAPIView):
     queryset = Movimimientos.objects.all()
     serializer_class = MovimientoSerializer
 
